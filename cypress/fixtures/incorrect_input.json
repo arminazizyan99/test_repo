@@ -1,0 +1,30 @@
+{
+   "wrong_input":[
+      {
+         "username":"John",
+         "password":"secret_sauce"
+      },
+      {
+         "username":"Sarah",
+         "password":"wrong_password"
+      },
+      {
+         "username":"LOCKED_OUT_USER",
+         "password":"secret_sauce"
+      },
+      {
+         "username":"STANDARD__USER",
+         "password":"secret_sauce"
+      },
+      {
+        
+         "username":"empty",
+         "password":"secret_sauce"
+      },
+
+      {
+         "username":"Rob",
+         "password":"empty"
+      }
+   ]
+}
