@@ -60,7 +60,7 @@ it("incorrect inputs",()=>{
 		 cy.Check(".error-button",['[data-test="error"]',"Epic sadface: Username is required"])
 		 cy.CleanUp(".error-button",['input[placeholder="Username"]','input[placeholder="Password"]'])
 
-	}
+	   }
         //if password is empty get password is required message
 	else if(input.password === "empty"){
          	       
@@ -71,11 +71,10 @@ it("incorrect inputs",()=>{
 
 		 cy.CleanUp(".error-button",['input[placeholder="Username"]','input[placeholder="Password"]'])
 
-	}
+	   }
 
         else
-	{
-
+	   {
 
 		 cy.LogIn(input.username, input.password)	
 		 
@@ -84,8 +83,10 @@ it("incorrect inputs",()=>{
 		 cy.Check(".error-button",['[data-test="error"]',"Epic sadface: Username and password do not match any user in this service"])
 		
 		 cy.CleanUp(".error-button",['input[placeholder="Username"]','input[placeholder="Password"]'])
-        	}
-          })
+      
+          }
+     
+       })
 	})
            
    
