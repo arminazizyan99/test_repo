@@ -27,7 +27,7 @@
 
 /// <reference types="@cypress/xpath"/>
 
-
+//Creating command for deleting username and password and closing error message
 Cypress.Commands.add("CleanUp", (selectorToclick: string, selectorToclean: any[]) =>  {
 
    cy.get(selectorToclick).click()
@@ -43,7 +43,7 @@ Cypress.Commands.add("CleanUp", (selectorToclick: string, selectorToclean: any[]
 })
 
 
-
+//Creating command for checking the error message,if it is the right one
 Cypress.Commands.add("Check", (selectorBeenabled: string, selectorText: any[]) =>  {
 
    cy.get(selectorBeenabled).should('be.enabled')
@@ -52,6 +52,8 @@ Cypress.Commands.add("Check", (selectorBeenabled: string, selectorText: any[]) =
 
 })
 
+
+//Creting command for login using username and password
 Cypress.Commands.add("LogIn",(username:string,password:string)=>{
          
 
@@ -59,9 +61,4 @@ Cypress.Commands.add("LogIn",(username:string,password:string)=>{
          cy.get("#user-name").should('have.value', username);
          cy.get('input[placeholder="Password"]').type(password);
          cy.get("#password").should('have.value', password);
-
-
-
 })
-
-
