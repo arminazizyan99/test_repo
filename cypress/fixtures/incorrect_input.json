@@ -18,13 +18,13 @@
       },
       {
         
-         "username":"empty",
+         "username":"",
          "password":"secret_sauce"
       },
 
       {
          "username":"Rob",
-         "password":"empty"
+         "password":""
       }
    ]
 }

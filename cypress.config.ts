@@ -4,4 +4,7 @@ export default {
       // implement node event listeners here
     },
   },
+  env: {
+    baseUrl: 'https://www.saucedemo.com/v1/index.html',
+    },
 };
