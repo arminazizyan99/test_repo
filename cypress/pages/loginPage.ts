@@ -1,40 +1,36 @@
 class loginPage  {
 
-    elements = { 
-        usernameInput : () => cy.get('input[placeholder="Username"]'),      
-        passwordInput : () => cy.get('input[placeholder="Password"]'),    
-        loginBtn : () => cy.get("#login-button"),
-        errorBtn : () => cy.get(".error-button"),
-        errorTxt : () => cy.get('[data-test="error"]')
-    }
+    usernameInput  = 'input[placeholder="Username"]'      
+    passwordInput = 'input[placeholder="Password"]'    
+    loginBtn = "#login-button"
+    errorBtn = ".error-button"
+    errorTxt = '[data-test="error"]'
+
 
 
     enterIdentifiers(username:string, password: string) {
 
-       this.elements.usernameInput().type(username);
-       this.elements.passwordInput().type(password);
+       cy.get(this.usernameInput).type(username);
+       cy.get(this.passwordInput).type(password);
 
     } 
     
     clickLoginBtn(){
 
-       this.elements.loginBtn().click();
+        cy.get(this.loginBtn).click();
     }
 
 
-    checkErrorText(param:string){
+    checkErrTextandClearInput(param:string){
 
-        this.elements.errorTxt().should('have.text',param)
+        cy.get(this.loginBtn).click();
+        cy.get(this.errorTxt).should('have.text',param)
+        cy.get(this.errorBtn).click()
+        cy.get(this.errorBtn).should("not.exist")
+
+        cy.get(this.usernameInput).clear()
+        cy.get(this.passwordInput).clear()
         
-    }
-
-    clearInputs(){
-
-        this.elements.errorBtn().click()
-        this.elements.errorBtn().should("not.exist")
-
-        this.elements.usernameInput().clear()
-        this.elements.passwordInput().clear()
     }
 
 }
