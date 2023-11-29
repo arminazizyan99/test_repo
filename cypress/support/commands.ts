@@ -28,7 +28,7 @@
 /// <reference types="@cypress/xpath"/>
 
 //Creating command for deleting username and password and closing error message
-Cypress.Commands.add("clear_inputs", (selectorToclick: string, selectorToclean: any[]) =>  {
+Cypress.Commands.add("clearInputs", (selectorToclick: string, selectorToclean: any[]) =>  {
 
    cy.get(selectorToclick).click()
    cy.get(selectorToclick).should("not.exist")
@@ -44,7 +44,7 @@ Cypress.Commands.add("clear_inputs", (selectorToclick: string, selectorToclean: 
 
 
 //Creating command for checking the error message,if it is the right one
-Cypress.Commands.add("check_error_text", (selectorBeenabled: string, selectorText: any[]) =>  {
+Cypress.Commands.add("checkErrorText", (selectorBeenabled: string, selectorText: any[]) =>  {
 
    cy.get(selectorBeenabled).should('be.enabled')
     
