@@ -5,4 +5,10 @@ export default {
       // implement node event listeners here
     }
   },
+  env: {
+
+    standard_user: { "username": "standard_user", "password": "secret_sauce"},
+    locked_user: { "username": "locked_out_user", "password": "secret_sauce"},
+  
+  }
 };

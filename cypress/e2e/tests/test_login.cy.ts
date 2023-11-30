@@ -12,23 +12,19 @@ describe("Login",()=>{
 
 it("should login successfully", ()=>{
 
-    cy.fixture('user_data.json').then((userData) =>{
-	    loginPage.enterIdentifiers(userData.users[0].username, userData.users[0].password);
-        loginPage.clickLoginBtn();
-	    cy.url().should("contain",homePage.successfulLoginPageUrl);
-     })
+	loginPage.enterIdentifiers(Cypress.env('standard_user').username, Cypress.env('standard_user').password);
+    loginPage.clickLoginBtn();
+	cy.url().should("contain",homePage.successfulLoginPageUrl);
       
    })
 
 
 it("should login unsuccessfully", ()=>{
 
-      cy.fixture('user_data.json').then((userData) =>{
-		 loginPage.enterIdentifiers(userData.users[1].username, userData.users[1].password);
-		 loginPage.checkErrTextandClearInput("Epic sadface: Sorry, this user has been locked out.")
-    })
- }) 
+	loginPage.enterIdentifiers(Cypress.env('locked_user').username, Cypress.env('locked_user').password);
+	loginPage.checkErrTextandClearInput("Epic sadface: Sorry, this user has been locked out.")
 
+    })
 
 
 

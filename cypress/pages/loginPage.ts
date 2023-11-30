@@ -11,7 +11,7 @@ class loginPage  {
     enterIdentifiers(username:string, password: string) {
 
        cy.get(this.usernameInput).type(username);
-       cy.get(this.passwordInput).type(password);
+       cy.get(this.passwordInput).type(password,{log: false})
 
     } 
     
