@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scripts": { "cy:run": "cypress run","cy:open": "cypress open"}
+    "scripts": { "cy:run": "cypress run","cy:open": "cypress open", "cy:run-login": "cypress run -env standard_user='{'username':'standard_user','password':'secrec_sauce'}' --spec 'cypress/e2e/tests/test_login.cy.ts'" }
   },
   "keywords": [],
   "author": "",
